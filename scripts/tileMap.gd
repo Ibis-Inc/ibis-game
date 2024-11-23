@@ -7,7 +7,7 @@ var stupid3 = FastNoiseLite.new()
 var width = 32
 var height = 32
 
-@onready var player = get_parent().get_child(2)
+@onready var player = get_parent().get_node("%Ibides")
 
 func _ready() -> void:
 	stupid.seed = randi()
@@ -16,7 +16,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	generate_chunk(position)
+	generate_chunk(player.position)
 
 
 func generate_chunk(position):

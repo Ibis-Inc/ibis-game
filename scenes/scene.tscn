@@ -1,10 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://e5x6ynnfxxf8"]
+[gd_scene load_steps=8 format=3 uid="uid://e5x6ynnfxxf8"]
 
 [ext_resource type="Texture2D" uid="uid://jifec2pwhwh6" path="res://sprites/platform.png" id="1_4ncwd"]
 [ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
+[ext_resource type="PackedScene" uid="uid://c3uhw3ldvuspi" path="res://scenes/world.tscn" id="3_s15xi"]
+[ext_resource type="Texture2D" uid="uid://e6d17xhw43pk" path="res://sprites/tilemap.png" id="4_ysyok"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xj0g"]
 size = Vector2(117, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vnjmx"]
+texture = ExtResource("4_ysyok")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3q3or"]
+sources/0 = SubResource("TileSetAtlasSource_vnjmx")
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,3 +47,6 @@ shape = SubResource("RectangleShape2D_7xj0g")
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
 unique_name_in_owner = true
 position = Vector2(27, -48)
+
+[node name="TileMap" parent="." instance=ExtResource("3_s15xi")]
+tile_set = SubResource("TileSet_3q3or")
