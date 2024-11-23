@@ -812,3 +812,5 @@ texture = ExtResource("1_mijyp")
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
 unique_name_in_owner = true
 position = Vector2(572, -57)
+
+[node name="thingn\'t" type="Node2D" parent="."]
