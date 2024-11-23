@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://e5x6ynnfxxf8"]
+[gd_scene load_steps=9 format=3 uid="uid://e5x6ynnfxxf8"]
 
 [ext_resource type="Texture2D" uid="uid://jifec2pwhwh6" path="res://sprites/platform.png" id="1_4ncwd"]
+[ext_resource type="Texture2D" uid="uid://c72r6vxovh8m7" path="res://sprites/ibisbg.png" id="1_uih67"]
 [ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
 [ext_resource type="PackedScene" uid="uid://c3uhw3ldvuspi" path="res://scenes/world.tscn" id="3_s15xi"]
 [ext_resource type="Texture2D" uid="uid://e6d17xhw43pk" path="res://sprites/tilemap.png" id="4_ysyok"]
@@ -33,6 +34,11 @@ sources/0 = SubResource("TileSetAtlasSource_vnjmx")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Ibisbg" type="Sprite2D" parent="."]
+position = Vector2(55, -131)
+scale = Vector2(0.409722, 0.409722)
+texture = ExtResource("1_uih67")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
 
@@ -51,3 +57,5 @@ tile_set = SubResource("TileSet_3q3or")
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
 unique_name_in_owner = true
 position = Vector2(22, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
