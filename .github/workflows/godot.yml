@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-and-test:
-    name: Build and Test Godot Project
+    name: Build, Test, and Upload Game
     runs-on: ubuntu-latest
 
     steps:
@@ -18,23 +18,34 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    # Set up Godot executable
-    - name: Set up Godot
-      uses: firebelley/setup-godot@v1
-      with:
-        godot-version: '4.0.3' # Specify the version of Godot Engine you need
+    # Download Godot headless version
+    - name: Download Godot
+      run: |
+        wget https://downloads.tuxfamily.org/godotengine/4.0.3/Godot_v4.0.3-stable_linux_headless.64.zip
+        unzip Godot_v4.0.3-stable_linux_headless.64.zip -d godot
+        mv godot/Godot_v4.0.3-stable_linux_headless.64 /usr/local/bin/godot
+        chmod +x /usr/local/bin/godot
 
-    # Install export templates
-    - name: Download Godot Export Templates
+    # Download export templates
+    - name: Download Export Templates
       run: |
         wget https://downloads.tuxfamily.org/godotengine/4.0.3/Godot_v4.0.3-stable_export_templates.tpz
         unzip Godot_v4.0.3-stable_export_templates.tpz -d ~/.local/share/godot/templates
 
     # Run Tests
     - name: Run Tests
-      run: godot --headless --script addons/gut/gut_cmdln.gd -d res://tests/
+      run: |
+        godot --headless --script addons/gut/gut_cmdln.gd -d res://tests/
 
     # Export Game (adjust for your target platform)
     - name: Export Game
       run: |
+        mkdir -p builds
         godot --headless --export "Linux/X11" builds/game.x86_64
+
+    # Upload Build Artifact
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: game-build
+        path: builds/
