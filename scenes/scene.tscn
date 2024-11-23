@@ -4,18 +4,19 @@
 [ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xj0g"]
-size = Vector2(32, 8)
+size = Vector2(117, 8)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(27, 1)
+position = Vector2(27.5, 1)
+scale = Vector2(3.65625, 1)
 texture = ExtResource("1_4ncwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(27, 1)
+position = Vector2(27.5, 1)
 shape = SubResource("RectangleShape2D_7xj0g")
 
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
