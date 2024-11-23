@@ -7,6 +7,8 @@ var stupid3 = FastNoiseLite.new()
 var width = 32
 var height = 32
 
+@onready var player = get_parent().get_child(2)
+
 func _ready() -> void:
 	stupid.seed = randi()
 	stupid2.seed = randi()
