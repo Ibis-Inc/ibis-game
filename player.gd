@@ -4,11 +4,12 @@ extends Area2D
 var screen_size
 
 var scale_h
+var is_jumping
 
 func _ready():
 	screen_size = get_viewport_rect().size
 
-func _process(delta):
+func _process(delta): #this is a loop chat!!
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x -= 1
@@ -16,6 +17,7 @@ func _process(delta):
 		velocity.x += 1
 	if Input.is_action_pressed("move_up"):
 		velocity.y += 1
+		is_jumping = true
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -37,9 +39,9 @@ func _process(delta):
 		$AnimatedSprite2D.flip_v = false
 		# $AnimatedSprite2D.scale.x = velocity.x
 		$AnimatedSprite2D.scale.x = scale_h
-	if velocity.x == 0:
+	if velocity.x == 0 && velocity.y == 0:
 		$AnimatedSprite2D.animation = "stand still"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = false
-	if velocity.y > 0:
-		$AnimatedSprite2D.animation = "jump"
+
+
