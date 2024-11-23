@@ -1,6 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://e5x6ynnfxxf8"]
 
 [ext_resource type="Texture2D" uid="uid://doioiuhdx6267" path="res://scenes/ibisbg.png" id="1_cbrgn"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="1_8nv47"]
 [ext_resource type="Texture2D" uid="uid://c1g41wsvprxb0" path="res://sprites/grasslol.png" id="1_mijyp"]
 [ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
 
@@ -9,6 +10,7 @@ size = Vector2(130.25, 19)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(62, 3)
+script = ExtResource("1_8nv47")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 unique_name_in_owner = true
@@ -69,7 +71,7 @@ scale = Vector2(1.01738, 1.08229)
 texture = ExtResource("1_cbrgn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(578.625, -3.5)
+position = Vector2(79.875, -5)
 shape = SubResource("RectangleShape2D_7xj0g")
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
@@ -811,4 +813,13 @@ texture = ExtResource("1_mijyp")
 
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
 unique_name_in_owner = true
-position = Vector2(572, -57)
+position = Vector2(68, -35)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
