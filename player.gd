@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 @export var speed = 200
 var screen_size
 
@@ -45,3 +47,6 @@ func _process(delta): #this is a loop chat!!
 		$AnimatedSprite2D.flip_h = false
 
 
+func _on_body_entered(body: Node2D) -> void:
+	hit.emit()
+	$CollisionShape2D.set_deferred("disabled", true)
