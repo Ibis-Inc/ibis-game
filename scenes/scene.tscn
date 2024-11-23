@@ -13,7 +13,6 @@ unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(79.875, -5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7xj0g")
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
