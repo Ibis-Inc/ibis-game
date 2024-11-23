@@ -70,7 +70,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkjsj"]
 size = Vector2(19, 22)
 
-[node name="Ibides" type="CharacterBody2D"]
+[node name="Ibides" type="Area2D"]
 position = Vector2(0, -1)
 script = ExtResource("1_c6d8k")
 metadata/_edit_group_ = true
