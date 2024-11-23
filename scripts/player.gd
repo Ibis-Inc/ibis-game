@@ -8,6 +8,8 @@ var screen_size
 var scale_h = 1
 var is_jumping = false
 
+var isStanding = false
+
 var velocity = Vector2();
 
 func _ready():
@@ -15,7 +17,11 @@ func _ready():
 
 func _process(delta): #this is a loop chat!!
 	#gravity
-	velocity.y += 2
+	if isStanding:
+		velocity.y = 0
+
+	else:	
+		velocity.y += 2
 
 	#jumping 
 	if Input.is_action_pressed("move_up"):
@@ -73,7 +79,6 @@ func _process(delta): #this is a loop chat!!
 	# if not Input.is_action_pressed("move_up"):
 	# 	is_jumping = false
 
-# func _on_body_entered(body: Node2D) -> void:
-# 	hit.emit()
-# 	$CollisionShape2D.set_deferred("disabled", true)
-
+func _on_body_entered(body: Node2D) -> void:
+	print_debug("collided")
+	isStanding = true

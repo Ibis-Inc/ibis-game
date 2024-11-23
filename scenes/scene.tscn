@@ -20,4 +20,5 @@ position = Vector2(27.5, 1)
 shape = SubResource("RectangleShape2D_7xj0g")
 
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
-position = Vector2(29, -31)
+unique_name_in_owner = true
+position = Vector2(27, -48)
