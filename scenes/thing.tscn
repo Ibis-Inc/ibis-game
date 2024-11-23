@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6sdfekmcv7gj"]
+[gd_scene load_steps=11 format=3 uid="uid://6sdfekmcv7gj"]
 
 [ext_resource type="Texture2D" uid="uid://bfvoia4tddw0i" path="res://sprites/evil_ibis1.png" id="1_cyf66"]
 [ext_resource type="Texture2D" uid="uid://dqv0cio8fnxmi" path="res://sprites/evil_ibis2.png" id="2_bmpm7"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://hij72taffox8" path="res://sprites/evil_ibis6.png" id="6_b8sha"]
 [ext_resource type="Texture2D" uid="uid://blu8jc7w4p2cx" path="res://sprites/evil_ibis7.png" id="7_0uquv"]
 [ext_resource type="Texture2D" uid="uid://bivh5mnu6fgx5" path="res://sprites/evil_ibis8.png" id="8_y2dab"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4pgry"]
+size = Vector2(24, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_btmw5"]
 animations = [{
@@ -46,10 +49,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="thing" type="StaticBody2D"]
+[node name="thing" type="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4pgry")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_btmw5")
 animation = &"stand"
