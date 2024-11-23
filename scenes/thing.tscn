@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://6sdfekmcv7gj"]
+[gd_scene load_steps=12 format=3 uid="uid://6sdfekmcv7gj"]
 
 [ext_resource type="Texture2D" uid="uid://bfvoia4tddw0i" path="res://sprites/evil_ibis1.png" id="1_cyf66"]
+[ext_resource type="Script" path="res://scripts/thing.gd" id="1_knwm3"]
 [ext_resource type="Texture2D" uid="uid://dqv0cio8fnxmi" path="res://sprites/evil_ibis2.png" id="2_bmpm7"]
 [ext_resource type="Texture2D" uid="uid://c3qi7fce36fj1" path="res://sprites/evil_ibis3.png" id="3_yxcm7"]
 [ext_resource type="Texture2D" uid="uid://dcel76ybvrbmm" path="res://sprites/evil_ibis4.png" id="4_dmh4i"]
@@ -50,6 +51,7 @@ animations = [{
 }]
 
 [node name="thing" type="RigidBody2D"]
+script = ExtResource("1_knwm3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
