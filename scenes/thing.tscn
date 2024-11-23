@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6sdfekmcv7gj"]
+[gd_scene load_steps=11 format=3 uid="uid://c2jo1ggb7dejw"]
 
 [ext_resource type="Texture2D" uid="uid://bfvoia4tddw0i" path="res://sprites/evil_ibis1.png" id="1_cyf66"]
 [ext_resource type="Texture2D" uid="uid://dqv0cio8fnxmi" path="res://sprites/evil_ibis2.png" id="2_bmpm7"]
@@ -58,4 +58,4 @@ shape = SubResource("RectangleShape2D_4pgry")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -2)
 sprite_frames = SubResource("SpriteFrames_btmw5")
-animation = &"stand"
+animation = &"walk"

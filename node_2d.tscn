@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dlgi55au70hmg"]
+
+[node name="evil_ibis" type="Node2D"]
+
+[node name="Mob" type="RigidBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mob"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mob"]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Mob"]
