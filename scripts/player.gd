@@ -18,31 +18,33 @@ func _ready():
 func _process(delta): #this is a loop chat!!
 	#gravity
 	if isStanding:
-		velocity.y = 0
+		velocity.y = -50
+		isStanding = false
 
 	else:	
 		velocity.y += 2
 
 	#jumping 
 	if Input.is_action_pressed("move_up"):
-		velocity.y = 500
+		velocity.y = -50
 
 	#movement
 	if Input.is_action_pressed("move_right"):
 		scale_h = -1
-		velocity.x = -25
+		velocity.x = 25
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.scale.x = scale_h
 		$AnimatedSprite2D.play()
 		
-	if Input.is_action_pressed("move_left"):
+	elif Input.is_action_pressed("move_left"):
 		scale_h = 1
-		velocity.x = 25
+		velocity.x = -25
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.scale.x = scale_h
 		$AnimatedSprite2D.play()
 
 	else:
+		velocity.x = 0
 		$AnimatedSprite2D.animation = "stand still"
 		$AnimatedSprite2D.scale.x = scale_h
 	# if Input.is_action_pressed("move_up"):
@@ -80,5 +82,4 @@ func _process(delta): #this is a loop chat!!
 	# 	is_jumping = false
 
 func _on_body_entered(body: Node2D) -> void:
-	print_debug("collided")
 	isStanding = true
