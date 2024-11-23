@@ -85,3 +85,5 @@ shape = SubResource("RectangleShape2D_vkjsj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(10, 10)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
