@@ -34,19 +34,20 @@ sources/0 = SubResource("TileSetAtlasSource_vnjmx")
 [node name="Node2D" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(27.5, 1)
+position = Vector2(73, 1)
 scale = Vector2(3.65625, 1)
 texture = ExtResource("1_4ncwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(27.5, 1)
+position = Vector2(73, 1)
 shape = SubResource("RectangleShape2D_7xj0g")
-
-[node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
-unique_name_in_owner = true
-position = Vector2(27, -48)
 
 [node name="TileMap" parent="." instance=ExtResource("3_s15xi")]
 tile_set = SubResource("TileSet_3q3or")
+
+[node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
+unique_name_in_owner = true
+position = Vector2(22, -20)
