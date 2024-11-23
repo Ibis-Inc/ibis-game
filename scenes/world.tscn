@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3uhw3ldvuspi"]
+[gd_scene load_steps=5 format=3 uid="uid://dgqsrwod12xn1"]
 
 [ext_resource type="Texture2D" uid="uid://e6d17xhw43pk" path="res://sprites/tilemap.png" id="1_t2v6s"]
 [ext_resource type="Script" path="res://scripts/tileMap.gd" id="2_enuri"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3spb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h1chn"]
 texture = ExtResource("1_t2v6s")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -24,7 +24,7 @@ texture_region_size = Vector2i(32, 32)
 3:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tm87j"]
-sources/0 = SubResource("TileSetAtlasSource_g3spb")
+sources/0 = SubResource("TileSetAtlasSource_h1chn")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_tm87j")
