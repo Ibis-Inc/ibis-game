@@ -3,15 +3,6 @@ extends Node
 @export var mob_scene: PackedScene
 var score
 
-func game_over():
-	$ScoreTimer.stop()
-	$MobTimer.stop()
-
-func new_game():
-	score = 0
-	$Player.start($StartPosition.position)
-	$StartTimer.start()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -50,4 +41,4 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 	
 func _ready():
-	new_game()
+	pass
