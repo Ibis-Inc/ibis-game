@@ -1,6 +1,4 @@
-extends CharacterBody2D
-
-signal hit
+extends Area2D
 
 @export var speed = 200
 var screen_size
@@ -8,44 +6,78 @@ var screen_size
 var scale_h = 1
 var is_jumping = false
 
-var player_velocity = Vector2()
+var isStanding = false
+
+var velocity = Vector2();
 
 func _ready():
 	screen_size = get_viewport_rect().size
 
 func _process(delta): #this is a loop chat!!
 	#gravity
-	if not is_on_floor():
-		player_velocity.y += 2
-	else:
-		player_velocity.y = 0
+	if isStanding:
+		velocity.y = -50
+		isStanding = false
+
+	else:	
+		velocity.y += 2
 
 	#jumping 
-	if Input.is_action_just_pressed("move_up") and is_on_floor():
-		player_velocity.y = -400
-		$AnimatedSprite2D.animation = "jump"
-		$AnimatedSprite2D.play()
+	if Input.is_action_pressed("move_up"):
+		velocity.y = -50
 
 	#movement
 	if Input.is_action_pressed("move_right"):
-		scale_h = 1
-		player_velocity.x = speed
-		$AnimatedSprite2D.animation = "walk"
-		$AnimatedSprite2D.scale.x = scale_h
-		$AnimatedSprite2D.play()
-	elif Input.is_action_pressed("move_left"):
 		scale_h = -1
-		player_velocity.x = -speed
+		velocity.x = 25
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.scale.x = scale_h
 		$AnimatedSprite2D.play()
+		
+	elif Input.is_action_pressed("move_left"):
+		scale_h = 1
+		velocity.x = -25
+		$AnimatedSprite2D.animation = "walk"
+		$AnimatedSprite2D.scale.x = scale_h
+		$AnimatedSprite2D.play()
+
 	else:
-		player_velocity.x = 0
+		velocity.x = 0
 		$AnimatedSprite2D.animation = "stand still"
 		$AnimatedSprite2D.scale.x = scale_h
+	# if Input.is_action_pressed("move_up"):
+	# 	velocity.y = 1
 
-	# Apply movement and handle collisions
-	player_velocity = move_and_slide()
+	# if velocity.x != 0:
+	# 	velocity = velocity.normalized() * speed
+	# 	$AnimatedSprite2D.play()
+	# else:
+	# 	$AnimatedSprite2D.stop()
 
-	# Clamp position to screen size
+	position += velocity * delta
 	position.x = clamp(position.x, 0, screen_size.x)
+
+	# if velocity.x < 0:
+	# 	scale_h = -1
+	
+	# if velocity.x > 0:
+	# 	scale_h = 1
+
+	# if velocity.x != 0:
+	# 	$AnimatedSprite2D.animation = "walk"
+	# 	$AnimatedSprite2D.flip_v = false
+	# 	$AnimatedSprite2D.scale.x = scale_h
+	# if velocity.x == 0:
+	# 	$AnimatedSprite2D.animation = "stand still"
+	# if velocity.y != 0:
+	# 	$AnimatedSprite2D.animation = "jump"
+	# 	$AnimatedSprite2D.flip_v = false
+	# 	$AnimatedSprite2D.flip_h = false
+
+
+	# # Reset jumping state when not moving up
+	# if not Input.is_action_pressed("move_up"):
+	# 	is_jumping = false
+
+func _on_body_entered(body: Node2D) -> void:
+	isStanding = true
