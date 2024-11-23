@@ -5,11 +5,11 @@ https://ibis-inc.github.io/ibis-game/
 steps:
 - [x] Player
 	- [x] Sprite
-	- [ ] Movements
+	- [x] Movements
 	- [ ] Attack animations
-- [ ] Level
-- [ ] Enemies
-	- [ ] Sprites
+- [x] Level
+- [x] Enemies
+	- [x] Sprites
 	- [ ] Attack animations
 - [ ] Attacks functionalies
-- [ ] thing
+- [x] thing
