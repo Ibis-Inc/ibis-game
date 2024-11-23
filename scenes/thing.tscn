@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://6sdfekmcv7gj"]
+
+[ext_resource type="Texture2D" uid="uid://bfvoia4tddw0i" path="res://sprites/evil_ibis1.png" id="1_cyf66"]
+[ext_resource type="Texture2D" uid="uid://dqv0cio8fnxmi" path="res://sprites/evil_ibis2.png" id="2_bmpm7"]
+[ext_resource type="Texture2D" uid="uid://c3qi7fce36fj1" path="res://sprites/evil_ibis3.png" id="3_yxcm7"]
+[ext_resource type="Texture2D" uid="uid://dcel76ybvrbmm" path="res://sprites/evil_ibis4.png" id="4_dmh4i"]
+[ext_resource type="Texture2D" uid="uid://mwm5qipmoq8" path="res://sprites/evil_ibis5.png" id="5_xqnne"]
+[ext_resource type="Texture2D" uid="uid://hij72taffox8" path="res://sprites/evil_ibis6.png" id="6_b8sha"]
+[ext_resource type="Texture2D" uid="uid://blu8jc7w4p2cx" path="res://sprites/evil_ibis7.png" id="7_0uquv"]
+[ext_resource type="Texture2D" uid="uid://bivh5mnu6fgx5" path="res://sprites/evil_ibis8.png" id="8_y2dab"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_btmw5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyf66")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bmpm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yxcm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dmh4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xqnne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b8sha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0uquv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y2dab")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[node name="thing" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_btmw5")
+animation = &"stand"
