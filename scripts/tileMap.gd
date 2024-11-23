@@ -7,7 +7,7 @@ var stupid3 = FastNoiseLite.new()
 var width = 32
 var height = 32
 
-@onready var player = get_parent().get_node("%Ibides")
+@onready var player = get_parent().get_child(2)
 
 func _ready() -> void:
 	stupid.seed = randi()
@@ -16,14 +16,14 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	generate_chunk(player.position)
+	generate_chunk(position)
 
 
 func generate_chunk(position):
 	var tile_pos = local_to_map(position)
 	for x in range(width):
 		for y in range(height):
-			var stupo = stupid.get_noise_2d(tile_pos.x-width/2 + x, tile_pos.y-height/2 + y)*10
-			var stupo2 = stupid2.get_noise_2d(tile_pos.x-width/2  + x, tile_pos.y-height/2 + y)*10
-			var stupo3 = stupid3.get_noise_2d(tile_pos.x-width/2  + x, tile_pos.y-height/2 + y)*10
-			set_cell(0, Vector2i(tile_pos.x-width/2  + x, tile_pos.y-height/2 + y), 0, Vector2(round((stupo+10)/5), round((stupo2+10)/5)))
+			var stupo = stupid.get_noise_2d(tile_pos.x + x, tile_pos.y + y)
+			var stupo2 = stupid2.get_noise_2d(tile_pos.x + x, tile_pos.y + y)
+			var stupo3 = stupid3.get_noise_2d(tile_pos.x + x, tile_pos.y + y)
+			set_cell(0, Vector2i(tile_pos.x + x, tile_pos.y + y), 0, Vector2i(1, 1))
