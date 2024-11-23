@@ -45,8 +45,11 @@ func _process(delta): #this is a loop chat!!
 		$AnimatedSprite2D.animation = "stand still"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = false
+<<<<<<< Updated upstream
 
 
 func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
+=======
+>>>>>>> Stashed changes
