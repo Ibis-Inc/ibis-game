@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://e5x6ynnfxxf8"]
+[gd_scene load_steps=4 format=3 uid="uid://e5x6ynnfxxf8"]
 
-[ext_resource type="Texture2D" uid="uid://jifec2pwhwh6" path="res://sprites/platform.png" id="1_hqefx"]
+[ext_resource type="Texture2D" uid="uid://jifec2pwhwh6" path="res://sprites/platform.png" id="1_4ncwd"]
+[ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xj0g"]
 size = Vector2(32, 8)
@@ -11,8 +12,11 @@ size = Vector2(32, 8)
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(27, 1)
-texture = ExtResource("1_hqefx")
+texture = ExtResource("1_4ncwd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(27, 1)
 shape = SubResource("RectangleShape2D_7xj0g")
+
+[node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
+position = Vector2(29, -31)

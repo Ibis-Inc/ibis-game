@@ -1,32 +1,32 @@
 [gd_scene load_steps=15 format=3 uid="uid://m4s36qeu0d6x"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_8idqi"]
-[ext_resource type="Texture2D" uid="uid://b3kbpqxw4jco1" path="res://sprites/ibis1.png" id="2_cqtj2"]
-[ext_resource type="Texture2D" uid="uid://ilv2g6p572i2" path="res://sprites/ibis9.png" id="3_ch5rd"]
-[ext_resource type="Texture2D" uid="uid://rh6y8irei7kg" path="res://sprites/ibis2.png" id="3_copex"]
-[ext_resource type="Texture2D" uid="uid://cqg55nmbsieuy" path="res://sprites/ibis10.png" id="4_e36tp"]
-[ext_resource type="Texture2D" uid="uid://dr5ic8xq8aydp" path="res://sprites/ibis3.png" id="4_krejd"]
-[ext_resource type="Texture2D" uid="uid://c1cvchct6ig81" path="res://sprites/ibis11.png" id="5_fyho5"]
-[ext_resource type="Texture2D" uid="uid://eujplnx8uayx" path="res://sprites/ibis4.png" id="5_riaur"]
-[ext_resource type="Texture2D" uid="uid://bjgn1j1ayigie" path="res://sprites/ibis5.png" id="6_0kxp3"]
-[ext_resource type="Texture2D" uid="uid://cfka2bdqykk20" path="res://sprites/ibis6.png" id="7_i30eb"]
-[ext_resource type="Texture2D" uid="uid://jyadjkhpcd6x" path="res://sprites/ibis7.png" id="8_7r7s5"]
-[ext_resource type="Texture2D" uid="uid://bfffprr0o6cpl" path="res://sprites/ibis8.png" id="9_mwhxf"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_c6d8k"]
+[ext_resource type="Texture2D" uid="uid://b3kbpqxw4jco1" path="res://sprites/ibis1.png" id="2_5kdrw"]
+[ext_resource type="Texture2D" uid="uid://ilv2g6p572i2" path="res://sprites/ibis9.png" id="3_nm1vd"]
+[ext_resource type="Texture2D" uid="uid://cqg55nmbsieuy" path="res://sprites/ibis10.png" id="4_t2a4k"]
+[ext_resource type="Texture2D" uid="uid://c1cvchct6ig81" path="res://sprites/ibis11.png" id="5_bda84"]
+[ext_resource type="Texture2D" uid="uid://rh6y8irei7kg" path="res://sprites/ibis2.png" id="6_5v6kp"]
+[ext_resource type="Texture2D" uid="uid://dr5ic8xq8aydp" path="res://sprites/ibis3.png" id="7_6wyls"]
+[ext_resource type="Texture2D" uid="uid://eujplnx8uayx" path="res://sprites/ibis4.png" id="8_ml8sj"]
+[ext_resource type="Texture2D" uid="uid://bjgn1j1ayigie" path="res://sprites/ibis5.png" id="9_5ebyv"]
+[ext_resource type="Texture2D" uid="uid://cfka2bdqykk20" path="res://sprites/ibis6.png" id="10_dd73r"]
+[ext_resource type="Texture2D" uid="uid://jyadjkhpcd6x" path="res://sprites/ibis7.png" id="11_4lrbd"]
+[ext_resource type="Texture2D" uid="uid://bfffprr0o6cpl" path="res://sprites/ibis8.png" id="12_aeytx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ybxxk"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cqtj2")
+"texture": ExtResource("2_5kdrw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_ch5rd")
+"texture": ExtResource("3_nm1vd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_e36tp")
+"texture": ExtResource("4_t2a4k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_fyho5")
+"texture": ExtResource("5_bda84")
 }],
 "loop": false,
 "name": &"jump",
@@ -34,7 +34,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_cqtj2")
+"texture": ExtResource("2_5kdrw")
 }],
 "loop": true,
 "name": &"stand still",
@@ -42,25 +42,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_copex")
+"texture": ExtResource("6_5v6kp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_krejd")
+"texture": ExtResource("7_6wyls")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_riaur")
+"texture": ExtResource("8_ml8sj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_0kxp3")
+"texture": ExtResource("9_5ebyv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_i30eb")
+"texture": ExtResource("10_dd73r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7r7s5")
+"texture": ExtResource("11_4lrbd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_mwhxf")
+"texture": ExtResource("12_aeytx")
 }],
 "loop": true,
 "name": &"walk",
@@ -72,7 +72,7 @@ size = Vector2(19, 22)
 
 [node name="Ibides" type="Area2D"]
 position = Vector2(0, -1)
-script = ExtResource("1_8idqi")
+script = ExtResource("1_c6d8k")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

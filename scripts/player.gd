@@ -47,6 +47,10 @@ func _process(delta): #this is a loop chat!!
 		$AnimatedSprite2D.flip_h = false
 
 
+	# # Reset jumping state when not moving up
+	# if not Input.is_action_pressed("move_up"):
+	# 	is_jumping = false
+
 func _on_body_entered(body: Node2D) -> void:
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
