@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=9 format=3 uid="uid://e5x6ynnfxxf8"]
+=======
+[gd_scene load_steps=4 format=3 uid="uid://e5x6ynnfxxf8"]
+>>>>>>> parent of dfb7f7f (Merge branches 'main' and 'main' of https://github.com/Ibis-Inc/ibis-game)
 =======
 [gd_scene load_steps=4 format=3 uid="uid://e5x6ynnfxxf8"]
 >>>>>>> parent of dfb7f7f (Merge branches 'main' and 'main' of https://github.com/Ibis-Inc/ibis-game)
@@ -33,9 +37,13 @@ shape = SubResource("RectangleShape2D_7xj0g")
 [node name="Ibides" parent="." instance=ExtResource("2_1x3xg")]
 unique_name_in_owner = true
 <<<<<<< HEAD
+<<<<<<< HEAD
 position = Vector2(22, -20)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+=======
+position = Vector2(68, -35)
+>>>>>>> parent of dfb7f7f (Merge branches 'main' and 'main' of https://github.com/Ibis-Inc/ibis-game)
 =======
 position = Vector2(68, -35)
 >>>>>>> parent of dfb7f7f (Merge branches 'main' and 'main' of https://github.com/Ibis-Inc/ibis-game)
