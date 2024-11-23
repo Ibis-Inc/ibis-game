@@ -6,7 +6,7 @@ signal hit
 var screen_size
 
 var scale_h
-var is_jumping
+var is_jumping = false
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -14,12 +14,11 @@ func _ready():
 func _process(delta): #this is a loop chat!!
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
-		velocity.x -= 1
+		velocity.x = -1
 	if Input.is_action_pressed("move_left"):
-		velocity.x += 1
+		velocity.x = 1
 	if Input.is_action_pressed("move_up"):
-		velocity.y += 1
-		is_jumping = true
+		velocity.y = 1
 
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
@@ -36,13 +35,14 @@ func _process(delta): #this is a loop chat!!
 	if velocity.x > 0:
 		scale_h = 1
 
-	if velocity.x !=0:
+	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_v = false
-		# $AnimatedSprite2D.scale.x = velocity.x
 		$AnimatedSprite2D.scale.x = scale_h
-	if velocity.x == 0 && velocity.y == 0:
+	if velocity.x == 0:
 		$AnimatedSprite2D.animation = "stand still"
+	if velocity.y != 0:
+		$AnimatedSprite2D.animation = "jump"
 		$AnimatedSprite2D.flip_v = false
 		$AnimatedSprite2D.flip_h = false
 

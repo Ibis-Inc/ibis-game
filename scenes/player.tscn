@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://deywswte507au"]
+[gd_scene load_steps=15 format=3 uid="uid://m4s36qeu0d6x"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8idqi"]
 [ext_resource type="Texture2D" uid="uid://b3kbpqxw4jco1" path="res://sprites/ibis1.png" id="2_cqtj2"]
