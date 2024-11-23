@@ -26,19 +26,19 @@ func _process(delta): #this is a loop chat!!
 
 	#jumping 
 	if Input.is_action_pressed("move_up"):
-		velocity.y = -50
+		velocity.y = -100
 
 	#movement
 	if Input.is_action_pressed("move_right"):
 		scale_h = -1
-		velocity.x = 25
+		velocity.x = 100
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.scale.x = scale_h
 		$AnimatedSprite2D.play()
 		
 	elif Input.is_action_pressed("move_left"):
 		scale_h = 1
-		velocity.x = -25
+		velocity.x = -100
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.scale.x = scale_h
 		$AnimatedSprite2D.play()
