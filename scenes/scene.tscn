@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://e5x6ynnfxxf8"]
 
-[ext_resource type="Texture2D" uid="uid://jifec2pwhwh6" path="res://sprites/platform.png" id="1_4ncwd"]
+[ext_resource type="Texture2D" uid="uid://c1g41wsvprxb0" path="res://sprites/grasslol.png" id="1_mijyp"]
 [ext_resource type="PackedScene" uid="uid://m4s36qeu0d6x" path="res://scenes/player.tscn" id="2_1x3xg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xj0g"]
@@ -12,9 +12,9 @@ size = Vector2(117, 8)
 unique_name_in_owner = true
 
 [node name="Platform" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(73, 1)
-scale = Vector2(3.65625, 1)
-texture = ExtResource("1_4ncwd")
+position = Vector2(72.75, 1)
+scale = Vector2(3.64063, 0.25)
+texture = ExtResource("1_mijyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(73, 1)
