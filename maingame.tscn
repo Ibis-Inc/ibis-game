@@ -1,4 +1,6 @@
 [gd_scene format=3 uid="uid://deywswte507au"]
 
-[node name="Area2D" type="Area2D"]
+[node name="Ibides" type="Area2D"]
 metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
